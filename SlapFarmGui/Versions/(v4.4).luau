@@ -184,7 +184,7 @@ local RequireService = cloneref or function(clone) return clone end
 local Players = RequireService(game:GetService("Players"))
 local ReplicatedStorage = RequireService(game:GetService("ReplicatedStorage"))
 local LocalPlayer = Players.LocalPlayer
-local Remote = ReplicatedStorage:WaitForChild("SnowHit")
+local Remote = ReplicatedStorage:WaitForChild("DualHit")
 local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
 local HRP = Character:WaitForChild("HumanoidRootPart")
 local LDRST = Players.LocalPlayer.leaderstats
@@ -200,8 +200,8 @@ repeat task.wait(.1) Timer = Timer + 0.1; RandomPlayer = AllPlayers[math.random(
 return RandomPlayer
 end
 
-if GloveValue() ~= "Snow" then
-fireclickdetector(workspace.Lobby.Snow:FindFirstChildWhichIsA("ClickDetector"))
+if GloveValue() ~= "Dual" then
+fireclickdetector(workspace.Lobby.Dual:FindFirstChildWhichIsA("ClickDetector"))
 end
 
 -- Loop teleporting to plr
