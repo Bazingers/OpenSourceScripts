@@ -196,7 +196,7 @@ function GetRandomPlayer()
 local AllPlayers = Players:GetChildren()
 local RandomPlayer = AllPlayers[math.random(1, #AllPlayers)]
 Timer = 0
-repeat task.wait(.1) Timer = Timer + 0.1; RandomPlayer = AllPlayers[math.random(1, #AllPlayers)] if Timer >= 3 then return false end until RandomPlayer ~= Players.LocalPlayer and RandomPlayer.Character and RandomPlayer.Character:FindFirstChild("entered") and RandomPlayer.Character:FindFirstChild("Ragdolled").Value == false and RandomPlayer.Character:FindFirstChildWhichIsA("Humanoid") and RandomPlayer.Character:FindFirstChildWhichIsA("Humanoid").Health ~= 0 and RandomPlayer.Character:FindFirstChild("HumanoidRootPart") and RandomPlayer.Character:FindFirstChild("rock") == nil and RandomPlayer.Character:FindFirstChild("stevebody") == nil
+repeat task.wait(.1) Timer = Timer + 0.1; RandomPlayer = AllPlayers[math.random(1, #AllPlayers)] if Timer >= 3 then return false end until RandomPlayer ~= Players.LocalPlayer and RandomPlayer.Character and RandomPlayer.Character:FindFirstChild("entered") and RandomPlayer.Character:FindFirstChild("Ragdolled").Value == false and RandomPlayer.Character:FindFirstChildWhichIsA("Humanoid") and RandomPlayer.Character:FindFirstChildWhichIsA("Humanoid").Health ~= 0 and RandomPlayer.Character:FindFirstChild("HumanoidRootPart") and RandomPlayer.Character:FindFirstChild("rock") == nil and RandomPlayer.Character:FindFirstChild("stevebody") == nil and Players.LocalPlayer:IsFriendsWith(RandomPlayer.UserId)
 return RandomPlayer
 end
 
